@@ -15,12 +15,12 @@ const List = ({ dataInfo, setdataInfo }) => {
                         <div className="list" >
                             <div className="round__image">
                                 <Image src={person.image}
-                                    width="100px" height="100px"
+                                    width="80px" height="80px"
                                     alt={person.name} />
                             </div>
                             <div className="reminder__text">
                                 <h4>{person.name}</h4>
-                                <p>{person.age} years today</p>
+                                <p>{person.age} years</p>
                             </div>
                         </div>
                         <br />

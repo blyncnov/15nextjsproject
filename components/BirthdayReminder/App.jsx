@@ -13,7 +13,7 @@ const App = () => {
     return (
         <Container>
             <ReminderBoxSection>
-                <h4>{dataInfo.length} birthdays today</h4>
+                <h4>{dataInfo.length} birthdays Today</h4>
                 <br />
                 <List dataInfo={dataInfo} setdataInfo={setdataInfo} />
             </ReminderBoxSection>

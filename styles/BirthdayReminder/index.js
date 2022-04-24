@@ -26,6 +26,8 @@ h4{
 }
 
 .round__image img{
+       width: 100px;
+    height: 100px;
     border-radius: 50%;
     object-fit: cover;
 }
@@ -67,6 +69,24 @@ max-width: 50%;
 
 @media (max-width: 768px) {
 max-width: 90vw;
+
+h4{
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.round__image img{
+   width: 50px;
+    height: 50px;
+}
+
+.reminder__text h4,
+.reminder__text p,
+button
+{
+    font-size: 15px;
+}
+
 }
 
 `
