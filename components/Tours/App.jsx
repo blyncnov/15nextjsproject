@@ -7,6 +7,7 @@ const url = 'https://course-api.com/react-tours-project'
 
 const Tours = () => {
     const [tours, setTours] = useState([])
+    const [readMore, setReadMore] = useState(false);
 
     const removeTour = (id) => {
         const newTours = tours.filter(tour => tour.id !== id)
@@ -14,6 +15,9 @@ const Tours = () => {
         console.log(newTours);
     }
 
+    const readMoreHandler = (id) => {
+        setReadMore(!readMore);
+    }
 
     useEffect(() => {
         fetch(url)
@@ -35,7 +39,10 @@ const Tours = () => {
                 </div>
 
                 <BCard >
-                    <TourCard data={tours} newTourFunc={removeTour} />
+                    <TourCard data={tours}
+                        info={readMore}
+                        read={readMoreHandler}
+                        newTourFunc={removeTour} />
                 </BCard>
             </BContainer>
         </Container>

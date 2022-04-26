@@ -3,8 +3,7 @@ import Image from "next/image"
 
 import { BSingleCard } from "../../styles/tours/Index"
 
-const TourCard = ({ data, newTourFunc }) => {
-    const [info, setInfo] = useState(false);
+const TourCard = ({ data, newTourFunc, read, info }) => {
 
     return (
         <div>
@@ -26,7 +25,7 @@ const TourCard = ({ data, newTourFunc }) => {
                                 info ? tour.info : tour.info.substring(0, 200) + "..."
                             } {" "}
                                 <span style={{ fontWeight: "bold", cursor: "pointer" }}
-                                    onClick={() => setInfo(!info)}>
+                                    onClick={() => read(tour.id)}>
                                     {info ? "Show Less" : "Show More"}
                                 </span>
                             </p>
