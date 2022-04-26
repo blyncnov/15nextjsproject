@@ -1,4 +1,5 @@
-import Head from 'next/head'
+import Head from "next/head";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -9,7 +10,19 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      
+      <div className="showcase">
+        <br />
+
+        <Link href="/birthday" passHref>
+          <a>Project 1</a>
+        </Link>
+
+        <br />
+        <br />
+        <Link href="/tours">
+          <a>Project 2</a>
+        </Link>
+      </div>
     </>
-  )
+  );
 }
