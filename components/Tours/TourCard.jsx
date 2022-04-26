@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Image from "next/image"
 
 import { BSingleCard } from "../../styles/tours/Index"
 
 const TourCard = ({ data }) => {
+    const [info, setInfo] = useState(false);
+
+    // const SeeInfoHandler = (id) => {
+
+    // }
+
     return (
         <div>
             {data.map(tour => {
@@ -18,11 +24,18 @@ const TourCard = ({ data }) => {
                         <div className="text">
                             <div className="info__price">
                                 <h2>{tour.name}</h2>
-                                <p>{"$"+ tour.price}</p>
+                                <p>{"$" + tour.price}</p>
                             </div>
-                            <p>{tour.info}</p>
+                            <p>{
+                                info ? tour.info : tour.info.substring(0, 200) + "..."
+                            } {" "}
+                                <span style={{ fontWeight: "bold", cursor: "pointer" }}
+                                    onClick={() => setInfo(!info)}>
+                                    {info ? "Show Less" : "Show More"}
+                                </span>
+                            </p>
                             <br />
-                            <button>Not Interested</button>
+                            <button onClick={() => removeTour(id)}>Not Interested</button>
                         </div>
                     </BSingleCard>
                 )
