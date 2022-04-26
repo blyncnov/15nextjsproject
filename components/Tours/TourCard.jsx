@@ -3,12 +3,8 @@ import Image from "next/image"
 
 import { BSingleCard } from "../../styles/tours/Index"
 
-const TourCard = ({ data }) => {
+const TourCard = ({ data, newTourFunc }) => {
     const [info, setInfo] = useState(false);
-
-    // const SeeInfoHandler = (id) => {
-
-    // }
 
     return (
         <div>
@@ -35,7 +31,7 @@ const TourCard = ({ data }) => {
                                 </span>
                             </p>
                             <br />
-                            <button onClick={() => removeTour(id)}>Not Interested</button>
+                            <button onClick={() => newTourFunc(tour.id)}>Not Interested</button>
                         </div>
                     </BSingleCard>
                 )
