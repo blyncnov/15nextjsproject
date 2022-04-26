@@ -1,6 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 
+import Tour from "../../components/Tours/App"
 
 const Tours = () => {
   return (
@@ -10,6 +11,7 @@ const Tours = () => {
         <meta name="Reminder App" content="Tours Reminder Application" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Tour/>
     </>
   )
 }
